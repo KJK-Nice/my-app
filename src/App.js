@@ -180,7 +180,6 @@ const App = () => {
               target="_blank"
               rel="noreferrer">See it on Opensea</a></span> : ''}
           </p>
-          
         </div>
         <div className="footer-container">
           <div className="footer-link-item">
@@ -201,9 +200,7 @@ const App = () => {
               rel="noreferrer"
             >{`View Collection`}</a>
           </div>
-          
         </div>
-        
       </div>
     </div>
   );
