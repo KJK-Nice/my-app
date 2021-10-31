@@ -8,10 +8,10 @@ import myEpicNft from './utils/MyEpicNFT.json';
 // Constants
 const TWITTER_HANDLE = 'niceusap';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
-const OPENSEA_LINK = 'https://testnets.opensea.io/collection/squarenft-cidctpylfh';
+const OPENSEA_LINK = 'https://testnets.opensea.io/collection/nft-terminology';
 const TOTAL_MINT_COUNT = 50;
 
-const CONTRACT_ADDRESS = "0xa7A1a296Dcd8d140929052cc3f2c6dB01281e921"
+const CONTRACT_ADDRESS = "0xd5CAe60d02515E2D99a7E68BB35E90c4920aF737"
 
 const App = () => {
   const [currentAccount, setCurrentAccount] = useState("");
@@ -171,11 +171,12 @@ const App = () => {
           <p className="sub-text">
             Each unique. Each beautiful. Discover your NFT today.
           </p>
-          <p className="sub-text gradient-sub-text">{TOTAL_MINT_COUNT !== currentMinted ? `${currentMinted}/${TOTAL_MINT_COUNT} NFTs minted so far` : "Sold out"}</p>
+          {currentAccount === "" ? '' : <p className="sub-text gradient-sub-text">{TOTAL_MINT_COUNT !== currentMinted ? `${currentMinted}/${TOTAL_MINT_COUNT} NFTs minted so far` : "Sold out"}</p>}
           {currentAccount === "" ? renderNotConnectedContainer() : TOTAL_MINT_COUNT !== currentMinted ? renderMintUI() : ""}
           <p className="sub-text">
             {mintedNFT.success ? <span>🎉 Congratulations! We've minted your NFT.<br/>
             <a 
+              className="footer-text gradient-sub-text"
               href={mintedNFT.link}
               target="_blank"
               rel="noreferrer">See it on Opensea</a></span> : ''}
